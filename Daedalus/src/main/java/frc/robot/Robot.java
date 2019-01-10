@@ -1,12 +1,15 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import frc.robot.Mappings.Drivetrain;
+import frc.robot.RobotMap.*;
 
 
 public class Robot extends TimedRobot{
 
-  Drivetrain dt = new Mappings.Drivetrain();
+  // Create a new R
+  RobotMap robotMap = new RobotMap();
+  Drivetrain drivetrain = robotMap.new Drivetrain();
+  
 
   @Override
   public void robotInit() {

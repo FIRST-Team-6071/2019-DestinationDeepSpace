@@ -3,9 +3,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Spark;
-import java.lang.*;
 
-public class Mappings{
+public class RobotMap{
 
     /**
      * Access DriveTrain components such as the motor controllers and encoders.
