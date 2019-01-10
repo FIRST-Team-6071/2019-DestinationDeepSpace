@@ -1,16 +1,16 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import frc.robot.RobotMap.*;
+import frc.robot.Systems.*;
 
 
 public class Robot extends TimedRobot{
 
     // Create a new RobotMap to have access to the different parts of the robot.
-    RobotMap robotMap = new RobotMap();
-    Drivetrain drivetrain = robotMap.new Drivetrain();
-    Input input = robotMap.new Input();
-    Ramp ramp = robotMap.new Ramp();
+    Systems system = new Systems();
+    Drivetrain drivetrain = system.new Drivetrain();
+    Input input = system.new Input();
+    Ramp ramp = system.new Ramp();
     
 
     @Override
@@ -55,5 +55,6 @@ public class Robot extends TimedRobot{
       */
 
       // Put code here...
+     drivetrain.Move(input.getLeftDrive(), input.getRightDrive());
     }
 }

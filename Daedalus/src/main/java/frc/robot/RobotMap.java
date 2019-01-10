@@ -1,86 +1,46 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Spark;
+public class RobotMap {
 
-public class RobotMap{
+    public class PWM {
 
-    /**
-     * Access DriveTrain components such as the motor controllers and encoders.
-     */
-    public class Drivetrain {
+        public static final int 
+            DRIVETRAIN_LEFT = 0,
+            DRIVETRAIN_RIGHT = 1,
+            HATCH_PLATE_DEPTH = 2,
+            HATCH_PLATE_HEIGHT = 3;
+            ;
+
+        private PWM() {} // Should never be constructed.
+
+    }
+
+    public class DIO {
         
-        Spark leftDrive = new Spark(0);
-        Spark rightDrive = new Spark(1);
+        public static final int
+            ENCODER_LEFT_A = 0,
+            ENCODER_LEFT_B = 0,
+            ENCODER_RIGHT_A = 0,
+            ENCODER_RIGHT_B = 0;
 
-        Encoder leftEncoder = new Encoder(0, 1);
-        Encoder rightEncoder = new Encoder(2, 3);
+        private DIO() {} // Should never be constructed.
+     }
 
-        Drivetrain() {
-            System.out.println("Created Drivetrain object.");
-        }
+     public class DS_USB {
 
-        /**
-         * Set the speeds of the left and right sides of the robot.
-         * 
-         * We use 2 motors on each side, but we use a PWM splitter going from one port on the RoboRIO to 2 seperate Rev Robotics Spark motor controllers. Hence why we are able to have just the 2 controllers.
-         * 
-         * @param leftAmmount
-         * @param rightAmmount
-         */
-        public void Move(double leftAmmount, double rightAmmount) {
-            rightDrive.setInverted(true);
-
-            // TODO: Implement Exponential Drive.
-            leftDrive.set(leftAmmount);
-            rightDrive.set(rightAmmount);
-
-        }
-
-        /**
-         * Stop all motors on the robot.
-         */
-        public void Stop() {
-            leftDrive.stopMotor();
-            rightDrive.stopMotor();
-        }
-
-        public Double getLeftEncoderAmmount() {
-            throw new UnsupportedOperationException("No encoder support yet.");
-        }
-        public Double getRightEncoderAmmount() {
-            throw new UnsupportedOperationException("No encoder support yet.");
-        }
-
-    }
-
-
-    /**
-     * Currently, this does nothing. It's just a place holder for when we get around to putting together the ramp.
-     * 
-     */
-    public class Ramp {
+        public static final int 
+            LEFT_STICK = 0,
+            RIGHT_STICK = 1;
         
-        Ramp() {
-            throw new UnsupportedOperationException("No ramp code currently availiable.");
-        }
+        private DS_USB() {} // Should never be constructed.
+     }
 
-    }
+     public class Controls {
 
+        public static final int 
+            DRIVE_AXIS = 1;
 
-    /**
-     * The class for receiving input from the joysticks in Driver Station.
-     * 
-     * We use a dual Joystick configuration for more percise control of the robot. 
-     */
-    public class Input {
-        Joystick left = new Joystick(0);
-        Joystick right = new Joystick(1);
-
-        Input() {
-            System.out.println("Created Input object.");
-        }
-    }
+        private Controls() {} // Should never be constructed.
+     }
 
 }
