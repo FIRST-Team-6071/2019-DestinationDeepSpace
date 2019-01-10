@@ -6,37 +6,54 @@ import frc.robot.RobotMap.*;
 
 public class Robot extends TimedRobot{
 
-  // Create a new R
-  RobotMap robotMap = new RobotMap();
-  Drivetrain drivetrain = robotMap.new Drivetrain();
-  
+    // Create a new RobotMap to have access to the different parts of the robot.
+    RobotMap robotMap = new RobotMap();
+    Drivetrain drivetrain = robotMap.new Drivetrain();
+    Input input = robotMap.new Input();
+    Ramp ramp = robotMap.new Ramp();
+    
 
-  @Override
-  public void robotInit() {
-
-  }
-
-
-  @Override
-  public void robotPeriodic() {
-  }
+    @Override
+    public void robotInit() {
+      System.out.println("Daedalus is online. Insert some snarky line to chuckle at whenever we turn on the robot at a competition.");
+    }
 
 
-  @Override
-  public void autonomousInit() {
+    @Override
+    public void robotPeriodic() {
 
-  }
+    }
 
-  @Override
-  public void autonomousPeriodic() {
 
-  }
+    /**
+     * NGL... I'm not looking forward to this....
+     */
+    @Override
+    public void autonomousInit() {
 
-  @Override
-  public void teleopPeriodic() {
-  }
+    }
 
-  @Override
-  public void testPeriodic() {
-  }
+    @Override
+    public void autonomousPeriodic() {
+
+    }
+
+    
+    @Override
+    public void teleopInit() {
+      // Ok, so this isn't used really until we get into encoders. Which won't be for a while.  
+    }
+
+    @Override
+    public void teleopPeriodic() {    
+      // This is where all of our code goes to control the input from the user.
+      /*
+        Looking in RobotMap.java you'll see a lot of the setup code has been taken care of. I mainly just did this so I could have a stable base when we get to working on auton.
+
+        For right now, all we need to do is setup controling the Drivetrain with the Input.
+        I've already constructed the correct classes to do this, so, it should be pretty much plug and play.
+      */
+
+      // Put code here...
+    }
 }

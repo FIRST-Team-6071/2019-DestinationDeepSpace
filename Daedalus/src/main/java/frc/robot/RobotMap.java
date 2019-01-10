@@ -17,8 +17,8 @@ public class RobotMap{
         Encoder leftEncoder = new Encoder(0, 1);
         Encoder rightEncoder = new Encoder(2, 3);
 
-        void DriveTrain() {
-            System.out.println("Created Drivetrain.");
+        Drivetrain() {
+            System.out.println("Created Drivetrain object.");
         }
 
         /**
@@ -49,7 +49,6 @@ public class RobotMap{
         public Double getLeftEncoderAmmount() {
             throw new UnsupportedOperationException("No encoder support yet.");
         }
-
         public Double getRightEncoderAmmount() {
             throw new UnsupportedOperationException("No encoder support yet.");
         }
@@ -63,7 +62,7 @@ public class RobotMap{
      */
     public class Ramp {
         
-        void Ramp() {
+        Ramp() {
             throw new UnsupportedOperationException("No ramp code currently availiable.");
         }
 
@@ -76,11 +75,12 @@ public class RobotMap{
      * We use a dual Joystick configuration for more percise control of the robot. 
      */
     public class Input {
-        Joystick leftJoy = new Joystick(0);
-        Joystick rightJoy = new Joystick(1);
-        
+        Joystick left = new Joystick(0);
+        Joystick right = new Joystick(1);
 
-        
+        Input() {
+            System.out.println("Created Input object.");
+        }
     }
 
 }
