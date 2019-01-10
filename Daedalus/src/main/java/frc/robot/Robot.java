@@ -1,11 +1,12 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.TimedRobot;
+import frc.robot.Mappings.Drivetrain;
 
 
-public class Robot extends IterativeRobot {
+public class Robot extends TimedRobot{
+
+  Drivetrain dt = new Mappings.Drivetrain();
 
   @Override
   public void robotInit() {
